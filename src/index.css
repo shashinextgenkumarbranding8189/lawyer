@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink-950 text-ink-100 font-sans antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  @apply bg-gold-500/90 text-ink-950;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #101013;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a31;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a24a;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(217, 185, 106, 0.35);
+  color: transparent;
+}
+
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
